@@ -1,0 +1,13 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="container">
+  <!-- <image class="avatar" src="/images/avatar/1.png"></image> -->
+  <l-avatar class="l-avatar" placement="bottom" shape="circle" open-data="{{['userAvatarUrl','userNickName']}}" size="180" />
+  <text class="motto">Hello,游浩</text>
+  <!-- <button>开启小程序之旅</button> -->
+  <view class="journey-container">
+    <text class="journey">开启小程序之旅</text>
+  </view>
+</view>
+
+
+<!-- flex 容器布局 -->

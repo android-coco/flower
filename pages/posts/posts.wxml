@@ -1,0 +1,14 @@
+<view>
+  <swiper indicator-dots="true" autoplay="true">
+    <swiper-item>
+      <!-- 插槽 -->
+      <image src="/images/bestplayers.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/lpl.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/jumpfly.png"></image>
+    </swiper-item>
+  </swiper>
+</view>
