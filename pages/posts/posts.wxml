@@ -1,5 +1,5 @@
 <view>
-  <swiper indicator-dots="true" autoplay="true">
+  <swiper circular="{{true}}" vertical="{{false}}" interval="3000" indicator-dots="{{true}}" autoplay="{{true}}">
     <swiper-item>
       <!-- 插槽 -->
       <image src="/images/bestplayers.png"></image>
@@ -11,4 +11,25 @@
       <image src="/images/jumpfly.png"></image>
     </swiper-item>
   </swiper>
+
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="/images/avatar/3.png"></image>
+      <text class="post-date">Nov 18 2020</text>
+    </view>
+
+    <text class="post-title">2020LPL夏季季后赛观赛指南</text>
+
+    <image class="post-image" src="/images/lpl.png"></image>
+
+    <text class="post-content">8月9号，LPL常规赛收官之战结束，在事关季后赛轮次的比赛中关键对局中，SN战胜了FPX，为本赛季常规赛画上句号。进入季后赛的战队依次为，TES、JDG、IG、SN、V5、LGD、WE、FPX</text>
+
+    <view class="post-like">
+      <image class="post-like-image" src="/images/icon/chat.png"></image>
+      <text class="post-like-font" >92</text>
+      <image class="post-like-image"  src="/images/icon/view.png"></image>
+      <text class="post-like-font" >102</text>
+    </view>
+
+  </view>
 </view>
