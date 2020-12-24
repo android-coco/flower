@@ -12,8 +12,8 @@
     </swiper-item>
   </swiper>
 
-  <block wx:for="{{posts}}"   wx:key="unique">
-  <view class="post-container">
+  <block wx:for="{{postList}}"   wx:key="unique">
+  <view bindtap="onGotoDetail" class="post-container">
     <view class="post-author-date">
       <image  class="post-author" src="{{item.avatar}}"></image>
       <text class="post-date">{{item.date}}</text>

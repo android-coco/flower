@@ -8,6 +8,26 @@ Page({
 
   },
 
+  onTap (params) {
+    //跳转页面 子页面 最多10个页面 页面栈
+    console.log("1111")
+    // wx.navigateTo({
+    //   url: "/pages/posts/posts",
+    // })
+
+    wx.redirectTo({
+      url: "/pages/posts/posts",
+    })
+  },
+
+  onViewTap: function (params) {
+    console.log("onViewTap")
+  },
+
+  onTextTap: function (params) {
+    console.log("onTextTap")
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
