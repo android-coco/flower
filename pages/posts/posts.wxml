@@ -18,18 +18,21 @@
       <text class="post-date">Nov 18 2020</text>
     </view>
 
-    <text class="post-title">2020LPL夏季季后赛观赛指南</text>
+    <text class="post-title">{{a}}</text>
 
     <image class="post-image" src="/images/lpl.png"></image>
 
     <text class="post-content">8月9号，LPL常规赛收官之战结束，在事关季后赛轮次的比赛中关键对局中，SN战胜了FPX，为本赛季常规赛画上句号。进入季后赛的战队依次为，TES、JDG、IG、SN、V5、LGD、WE、FPX</text>
 
     <view class="post-like">
-      <image class="post-like-image" src="/images/icon/chat.png"></image>
-      <text class="post-like-font" >92</text>
-      <image class="post-like-image"  src="/images/icon/view.png"></image>
+      <!-- <image class="post-like-image" src="/images/icon/chat.png"></image> -->
+      <l-icon class="post-like-image" color="#666" size="28" name="favor"/>
+      <text  class="post-like-font" >92</text>
+      <!-- <image class="post-like-image"  src="/images/icon/view.png"></image> -->
+      <l-icon class="post-like-image" color="#666" size="32" name="eye"/>
       <text class="post-like-font" >102</text>
     </view>
+
 
   </view>
 </view>

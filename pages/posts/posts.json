@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "l-icon":"/miniprogram_npm/lin-ui/icon/index"
+  },
+  "navigationBarBackgroundColor": "#C22A1E"
 }

@@ -71,8 +71,8 @@ swiper image {
 }
 
 .post-like-image {
-  width: 32rpx;
-  height: 32rpx;
+  /* width: 32rpx;
+  height: 32rpx; */
   margin-right: 16rpx;
 }
 
