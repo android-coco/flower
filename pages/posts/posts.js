@@ -127,8 +127,11 @@ Page({
   },
 
   onGotoDetail(event) {
+    console.log(event)
+    console.log(event.currentTarget.dataset.postId)
+    const pid = event.currentTarget.dataset.postId | event.detail.pid
     wx.navigateTo({
-      url: "/pages/posts-detail/posts-detail",
+      url: "/pages/posts-detail/posts-detail?pid=" + pid,
     })
   },
   /**
