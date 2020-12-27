@@ -9,7 +9,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    postData: {}
+    postData: {},
+    collected: false,
+    _postsCollected: {},
+    _pid: null,
   },
 
   /**
@@ -18,10 +21,59 @@ Page({
   onLoad: function (options) {
     console.log(options)
     const postData = postList[options.pid]
-    console.log(postData)
+    this.data._pid = options.pid
+
+    const postsCollected = wx.getStorageSync('posts_collected')
+    if (postsCollected) {
+      this.data._postsCollected = postsCollected
+    }
+
+    let collected = postsCollected[options.pid]
+
+    if (collected == undefined) {
+      collected = false
+    }
+
+    // console.log(collected)
+    // console.log(postsCollected)
+
+    // console.log(postData)
     this.setData({
-      postData
+      postData,
+      collected
     })
+  },
+
+  async onShare(event){
+    const result = await wx.showActionSheet({
+      itemList: ['分享到QQ','分享到微信','分享到朋友圈']
+    })
+    console.log(result)
+  },
+
+  async onCollect(event) {
+
+    const postsCollected = this.data._postsCollected
+
+    postsCollected[this.data._pid] = !this.data.collected
+
+    this.setData({
+      collected: !this.data.collected
+    })
+
+    wx.setStorageSync('posts_collected', postsCollected)
+
+    wx.showToast({
+      title: this.data.collected?'收藏成功':'取消收藏',
+      duration: 3000
+    })
+
+    // const result =await wx.showModal({
+    //   title:'是否收藏文章'
+    // })
+    // if(result.confirm){
+
+    // }
   },
 
   /**

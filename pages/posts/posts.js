@@ -3,8 +3,10 @@
 // var postData = require("../../data/data.js")
 // console.log(postData)
 
-import {postList} from "../../data/data.js"
-console.log(postList)
+import {
+  postList
+} from "../../data/data.js"
+//console.log(postList)
 Page({
 
   /**
@@ -18,11 +20,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  async onLoad(options) {
     // this.setData({
     //   b: "2021"
     // })
-    console.log("onLoad")
+    // console.log("onLoad")
     // var content = [{
     //     title: "2020LPL夏季赛季后赛观赛指南",
     //     content: "8月9号，LPL常规赛收官之战结束，在事关季后赛轮次的比赛中关键对局中，SN战胜了FPX，为本赛季常规赛画上句号。进入季后赛的战队依次为，TES、JDG、IG、SN、V5、LGD、WE、FPX",
@@ -121,8 +123,30 @@ Page({
     //     }
     //   },
     // ]
+    wx.setStorageSync('flag', true)
+    wx.setStorageSync('flag', false)
+    wx.setStorageSync('flag1', 1)
+    //wx.removeStorageSync('flag')
+    //wx.clearStorageSync()
+
+    //const flag = wx.getStorageSync('flag1')
+    //console.log(flag)
+
+     const flagYb = await wx.getStorage({
+      key: 'flag1',
+      // success(value) {
+      //   console.log(value.data)
+      // }
+    })
+
+    console.log(flagYb.data)
+
+    // flagYb.then((value) => {
+    //     console.log(value)
+    // })
+
     this.setData({
-       postList
+      postList
     })
   },
 
@@ -139,48 +163,48 @@ Page({
    */
   onReady: function () {
     // console.log(this.data)
-    console.log("onReady")
+    // console.log("onReady")
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log("onShow")
+    // console.log("onShow")
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log("onHide")
+    // console.log("onHide")
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    console.log("onUnload")
+    // console.log("onUnload")
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log("onPullDownRefresh")
+    // console.log("onPullDownRefresh")
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log("onReachBottom")
+    // console.log("onReachBottom")
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    console.log("onShareAppMessage")
+    // console.log("onShareAppMessage")
   }
 })
