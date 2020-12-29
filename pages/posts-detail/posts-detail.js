@@ -3,6 +3,7 @@ import {
   postList
 } from "../../data/data.js"
 
+const app = getApp()
 Page({
 
   /**
@@ -11,8 +12,10 @@ Page({
   data: {
     postData: {},
     collected: false,
+    isPlaying: false,
     _postsCollected: {},
     _pid: null,
+    _mgr: null
   },
 
   /**
@@ -40,13 +43,55 @@ Page({
     // console.log(postData)
     this.setData({
       postData,
-      collected
+      collected,
+      isPlaying: this.currentMusicIsPlaying(),
+    })
+
+    const mgr = wx.getBackgroundAudioManager()
+    this.data._mgr = mgr
+    mgr.onPlay(this.onMusicStart)
+    mgr.onPause(this.onMusicStop)
+  },
+
+  currentMusicIsPlaying() {
+    if(app.isPlaying && app.gIsPlayingPostId === this.data._pid) {
+      return true
+    }
+    return false
+  },
+
+  onMusicStart(event) {
+    const mgr = this.data._mgr
+    const music = postList[this.data._pid].music
+
+    mgr.onPlay(() => {
+
+    })
+
+    mgr.src = music.url
+    mgr.title = music.title
+    mgr.coverImgUrl = music.coverImg
+    app.gIsPlayingMusic = true
+    app.gIsPlayingPostId = this.data._pid
+    this.setData({
+      isPlaying: true
     })
   },
 
-  async onShare(event){
+  onMusicStop(event) {
+    const mgr = this.data._mgr
+    //mgr.stop()
+    mgr.pause()
+    app.gIsPlayingMusic = false
+    app.gIsPlayingPostId = -1
+    this.setData({
+      isPlaying: false
+    })
+  },
+
+  async onShare(event) {
     const result = await wx.showActionSheet({
-      itemList: ['分享到QQ','分享到微信','分享到朋友圈']
+      itemList: ['分享到QQ', '分享到微信', '分享到朋友圈']
     })
     console.log(result)
   },
@@ -64,7 +109,7 @@ Page({
     wx.setStorageSync('posts_collected', postsCollected)
 
     wx.showToast({
-      title: this.data.collected?'收藏成功':'取消收藏',
+      title: this.data.collected ? '收藏成功' : '取消收藏',
       duration: 3000
     })
 
