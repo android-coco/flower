@@ -2,13 +2,13 @@
   <swiper circular="{{true}}" vertical="{{false}}" interval="3000" indicator-dots="{{true}}" autoplay="{{true}}">
     <swiper-item>
       <!-- 插槽 -->
-      <image src="/images/bestplayers.png"></image>
+      <image data-post-id="3" bindtap="onGotoDetail" src="/images/bestplayers.png"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/lpl.png"></image>
+      <image data-post-id="0" bindtap="onGotoDetail" src="/images/lpl.png"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/jumpfly.png"></image>
+      <image data-post-id="4" bindtap="onGotoDetail" src="/images/jumpfly.png"></image>
     </swiper-item>
   </swiper>
 
