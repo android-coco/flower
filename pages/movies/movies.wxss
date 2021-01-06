@@ -1,0 +1,7 @@
+.movie-lsit {
+  margin-bottom: 30rpx;
+}
+
+page{
+  background-color: #f2f2f2;
+}
