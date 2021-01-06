@@ -15,9 +15,12 @@ Page({
     //   url: "/pages/posts/posts",
     // })
 
-    wx.redirectTo({
-      url: "/pages/posts/posts",
+    wx.switchTab({
+      url: '/pages/posts/posts',
     })
+    // wx.redirectTo({
+    //   url: "/pages/posts/posts",
+    // })
   },
 
   onViewTap: function (params) {
