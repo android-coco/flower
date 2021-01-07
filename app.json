@@ -3,7 +3,8 @@
     "pages/welcome/welcome",
     "pages/posts/posts",
     "pages/posts-detail/posts-detail",
-    "pages/movies/movies"
+    "pages/movies/movies",
+    "pages/more-movie/more-movie"
   ],
   "window": {
     "navigationBarBackgroundColor": "#C22A1E"
@@ -30,5 +31,10 @@
     "audio",
     "location"
   ],
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "movie": "/components/movie/index",
+    "l-search-bar": "/miniprogram_npm/lin-ui/search-bar/index",
+    "l-rate":"/miniprogram_npm/lin-ui/rate/index"
+  }
 }
