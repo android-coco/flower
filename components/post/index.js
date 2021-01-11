@@ -18,14 +18,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
-    onGotoDetail(event) {
-      const pid = event.currentTarget.dataset.postId | event.detail.pid
-      wx.navigateTo({
-        url: "/pages/posts-detail/posts-detail?pid=" + pid,
+    onTap(event) {
+      // const pid = event.currentTarget.dataset.postId | event.detail.pid
+      // wx.navigateTo({
+      //   url: "/pages/posts-detail/posts-detail?pid=" + pid,
+      // })
+      const pid = this.properties.res.postId
+      console.log(pid)
+      this.triggerEvent('posttap',{
+        pid
       })
     },
-  },
-
- 
+  }
 })

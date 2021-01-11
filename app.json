@@ -4,7 +4,8 @@
     "pages/posts/posts",
     "pages/posts-detail/posts-detail",
     "pages/movies/movies",
-    "pages/more-movie/more-movie"
+    "pages/more-movie/more-movie",
+    "pages/movie-detail/movie-detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#C22A1E"
@@ -35,6 +36,6 @@
   "usingComponents": {
     "movie": "/components/movie/index",
     "l-search-bar": "/miniprogram_npm/lin-ui/search-bar/index",
-    "l-rate":"/miniprogram_npm/lin-ui/rate/index"
+    "l-rate": "/miniprogram_npm/lin-ui/rate/index"
   }
 }
